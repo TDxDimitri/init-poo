@@ -3,14 +3,15 @@
 require './class/person.php';
 
 $logan = new Person;
-
-$lastName = $logan->getLastName();
-$firstName = $logan->getFirstName();
+$dimitri = new Person;
+$theo = new Person("FEVER","Theo");
 
 $logan->setFirstName('Logan');
 $logan->setLastName('HENON');
+$dimitri->setFirstName('Dimitri');
+$dimitri->setLastName('TALLEU');
 
-$lastName = $logan->getLastName();
-$firstName = $logan->getFirstName();
 
-echo "<br>". $lastName . " " . $firstName; 
+echo "<br>". $logan->getFirstName()  . " " .  $logan->getLastName();
+echo "<br>". $dimitri->getFirstName()  . " " .  $dimitri->getLastName();
+echo "<br>". $theo->getFirstName()  . " " .  $theo->getLastName();

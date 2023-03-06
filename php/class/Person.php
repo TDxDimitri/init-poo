@@ -2,10 +2,16 @@
 
 class Person {
     // Attributs
-    private $_lastName = "Nom";
-    private $_firstName = "Prénom";
+    private $_lastName;
+    private $_firstName;
 
     // Constructor
+    public function __construct($lastName="Nom",$firstName="Prénom")
+    {
+        $this->setLastName($lastName);
+        $this->setFirstName($firstName);
+        
+    }
     // Getters
     public function getLastName() {
         return $this->_lastName;
@@ -17,12 +23,16 @@ class Person {
     }
     // Setters
     public function setLastName($lastName) {
+        if (!preg_match('/\d/', $lastName)){
         $this->_lastName = $lastName;
+    }
 
     }
     public function setFirstName($firstName) {
-        $this->_firstName = $firstName;
-
+        if (!preg_match('/\d/', $firstName)){
+            $this->_firstName = $firstName;
+        }
+    
     }
     // Methods
 }
