@@ -1,8 +1,9 @@
 <?php
 
 spl_autoload_register(function ($class_name) {
-    include "class/".$class_name.'.php';
+    require_once "class/".$class_name.'.php';
 });
+include "settings/dbconnect.php";
 
 
 // $logan = new Person;
@@ -36,6 +37,18 @@ spl_autoload_register(function ($class_name) {
 // // $ferrand->getFirstName();
 // echo $ferrand->describe();
 
-$nico = new Trainer("blabla.github.com","HERBEZ","Nicolas",TRAINER::PREFERED_COLOR_RED);
+// $nico = new Trainer("blabla.github.com","HERBEZ","Nicolas",TRAINER::PREFERED_COLOR_RED);
 
-echo $nico->describe();
+// echo $nico->describe();
+
+$manager = new Manager($dbPerson);
+
+// $apprenant = new Learner("discord", "app", "renant",LEARNER::PREFERED_COLOR_YELLOW);
+// $formateur = new Trainer("organisation", "form", "ateur",TRAINER::PREFERED_COLOR_RED);
+
+// echo $apprenant->describe(); echo '<br>';
+
+$dimitri = new Learner("Kurama#8483", "Talleu", "Dimitri", LEARNER::PREFERED_COLOR_GREEN);
+echo $dimitri->describe(); echo '<br>';
+
+$manager->create($dimitri);
