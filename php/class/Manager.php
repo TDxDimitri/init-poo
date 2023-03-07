@@ -45,6 +45,7 @@ public function create(LEARNER|TRAINER $objet){
         $stmt->bindParam(':discord', $discord);
         $stmt->bindParam(':idperson', $idperson, PDO::PARAM_INT);
         $stmt->execute();
+        
     }
 }
 

@@ -65,7 +65,7 @@ class Person {
      */
     public function describe() :string {
 
-    return '<br><br>Le nom est : '.$this->_lastName. '<br> , Le prénom est : '. $this->_firstName.'<br>  La couleur préférée est le: '. $this->_color .'<br>';
+    return '<br><br>Le nom est : '.$this->_lastName. '<br>  Le prénom est : '. $this->_firstName.'<br>  La couleur préférée est le: '. $this->_color .'<br>';
 
     
 }
